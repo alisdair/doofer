@@ -1,0 +1,38 @@
++establish-baseline
+
+html
+  +adjust-leading-to(2)
+  font-family: "Helvetica Neue", "Helvetica", sans-serif
+  background: #ddd
+
+@for $i from 1 through 6
+  h#{$i}
+    $font-size: nth($heading-font-sizes, $i)
+    +adjust-font-size-to($font-size)
+    +leader(2, $font-size)
+    +trailer(1, $font-size)
+    font-weight: bold
+
+h1
+  +trailer(2, nth($heading-font-sizes, 1))
+
+#title
+  @extend h6
+  +leader(1, nth($heading-font-sizes, 6))
+  +trailer(4, nth($heading-font-sizes, 6))
+  color: $support-color
+
+p
+  +trailer(2)
+
+a
+  color: $accent-color
+  text-decoration: none
+  &:visited
+    color: lighten($accent-color, 25%)
+  &:hover
+    background: $accent-color
+    color: white
+
+pre,code,tt
+  font-family: "Menlo", "Bitstream Vera Sans Mono", "Deja Vu Sans Mono", "Andale Mono", monospace
