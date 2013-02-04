@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 REPO=https://github.com/alisdair/doofer
 
 # I like Sublime Text, but maybe you prefer TextMate or vim...
@@ -16,15 +18,20 @@ usage() {
 
 app=$1
 
-# Clone and remove my remote. Add your own later!
+# Clone and remove git history
 git clone https://github.com/alisdair/doofer $app
 cd $app
-git remote rm origin
+rm -rf .git
 
 # Set up gems and pow
 bundle install
 rm ~/.pow/$app
 ln -s $PWD ~/.pow/$app
+
+# Start your git repository
+git init
+git add .
+git commit -m "Initial commit"
 
 # Open the site, then edit the three main files as a project
 open "http://$app.dev/"
