@@ -25,7 +25,7 @@ rm -rf .git
 
 # Set up gems and pow
 bundle install
-rm ~/.pow/$app
+[[ -e ~/.pow/$app ]] && rm ~/.pow/$app
 ln -s $PWD ~/.pow/$app
 
 # Start your git repository
