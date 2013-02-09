@@ -1,7 +1,5 @@
-require 'rubygems'
-require 'compass'
-require 'sinatra'
-require 'haml'
+require "bundler/setup"
+Bundler.require(:default)
 
 configure do
   set :title, File.basename(File.dirname(__FILE__))
