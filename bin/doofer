@@ -21,6 +21,7 @@ app=$1
 # Clone and remove git history
 git clone https://github.com/alisdair/doofer $app
 cd $app
+git checkout -b coffeescript origin/coffeescript
 rm -rf .git
 
 # Set up gems and pow
@@ -35,4 +36,4 @@ git commit -m "Initial commit"
 
 # Open the site, then edit the three main files as a project
 open "http://$app.dev/"
-$TEXT_EDITOR haml/index.haml js/app.js sass/screen.sass .
+$TEXT_EDITOR haml/index.haml js/app.coffee sass/screen.sass .
