@@ -21,6 +21,7 @@ GEM
       rack
     rack-protection (1.3.2)
       rack
+    rake (10.0.3)
     sass (3.2.5)
     sinatra (1.3.4)
       rack (~> 1.4)
@@ -35,5 +36,6 @@ DEPENDENCIES
   compass
   haml
   rack-coffee
+  rake
   sass
   sinatra
