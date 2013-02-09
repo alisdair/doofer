@@ -23,10 +23,11 @@ git clone https://github.com/alisdair/doofer $app
 cd $app
 rm -rf .git
 
-# Set up gems and pow
+# Set up gems
 bundle install
-[[ -e ~/.pow/$app ]] && rm ~/.pow/$app
-ln -s $PWD ~/.pow/$app
+
+# Add link for pow
+rake link
 
 # Start your git repository
 git init
