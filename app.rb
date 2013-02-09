@@ -2,7 +2,7 @@ require "bundler/setup"
 Bundler.require(:default)
 
 configure do
-  set :title, File.basename(File.dirname(__FILE__))
+  set :title, File.basename(File.expand_path(File.dirname(__FILE__)))
 
   set :haml, :format => :html5
   set :views, "haml"
