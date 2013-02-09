@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  $("<p>").html("Your code here.").appendTo("#main");
+  $("<p>").html("Code is in app.js.").appendTo("#main");
 });
