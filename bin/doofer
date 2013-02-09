@@ -35,5 +35,6 @@ git add .
 git commit -m "Initial commit"
 
 # Open the site, then edit the three main files as a project
-open "http://$app.dev/"
+ADDR=`ipconfig getifaddr en0 || ipconfig getifaddr en1`
+[ -n "$ADDR" ] && open "http://$app.$ADDR.xip.io/" || open "http://$app.dev/"
 $TEXT_EDITOR haml/index.haml js/app.js sass/screen.sass .
