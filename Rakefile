@@ -6,7 +6,7 @@ desc "Add this doofer to your pow configuration"
 task :link do
   app = File.basename(File.expand_path(File.dirname(__FILE__)))
   pow = File.join(ENV['HOME'], '.pow', app)
-  rm pow
+  rm pow if File.exists? pow
   symlink Dir.pwd, pow
 end
 
